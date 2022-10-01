@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+:root {
+    --cyan: hsl(176, 50%, 47%);
+    --dark-cyan: hsl(176, 72%, 28%);
+    --black: hsl(0, 0%, 0%);
+    --grey: hsl(0, 0%, 48%);
+    --white: hsl(0, 0%, 100%);
+    --bold: 700;
+    --medium: 500;
+    --light: 400;
+    --small-text: 1rem;
+    --big-text: 1.6rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    width: 100vw;
+    height: auto;
+    font-family: 'Commissioner', sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(248, 249, 244);
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    position: absolute;
+}
+
+.hero-section {
+    top: 0;
+    object-fit: contain;
+}
+
+nav {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+ul > li {
+    cursor: pointer;
+    font-size: var(--small-text);
+    font-weight: var(--light);
+    color: var(--white);
+}
+
+.contents {
+    width: 37%;
+}
+
+.first {
+    width: 100%;
+    top: -6rem;
+    position: relative;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    font-size: var(--small-text);
+}
+
+.mastercraft-logo {
+    top: -1.5rem;
+    position: absolute;
+}
+
+.first > h1 {
+    font-size: var(--big-text);
+    margin-bottom: .8rem;
+}
+
+.actions {
+    margin-top: 2.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    padding: 20px 30px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.bookmark {
+    background-image: url(./images/icon-bookmark.svg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px;
+}
+
+.bookmark > p {
+    margin-left: 2.5rem;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
