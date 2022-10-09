@@ -11,6 +11,7 @@
     --light: 400;
     --small-text: 1rem;
     --big-text: 1.6rem;
+    --bigger-text: 2rem;
 }
 
 * {
@@ -24,7 +25,10 @@ body {
     height: auto;
     font-family: 'Commissioner', sans-serif;
     overflow-x: hidden;
-    background-color: rgb(248, 249, 244);
+    background-color: rgb(232, 233, 227);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main {
@@ -55,6 +59,10 @@ nav {
     justify-content: space-between;
 }
 
+.logo {
+    cursor: pointer;
+}
+
 ul {
     display: flex;
     align-items: center;
@@ -71,20 +79,26 @@ ul > li {
 }
 
 .contents {
-    width: 37%;
+    width: 50%;
+    margin-top: -5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.first {
-    width: 100%;
-    top: -6rem;
-    position: relative;
+.box {
     background-color: var(--white);
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 8px;
-    padding: 3rem 2rem;
+    width: 100%;
+}
+
+.first {
+    position: relative;
     font-size: var(--small-text);
+    text-align: center;
 }
 
 .mastercraft-logo {
@@ -94,15 +108,16 @@ ul > li {
 
 .first > h1 {
     font-size: var(--big-text);
-    margin-bottom: .8rem;
+    margin: 3rem 3rem .5rem;
 }
 
 .actions {
-    margin-top: 2.5rem;
-    width: 100%;
+    margin: 2rem 0;
+    width: inherit;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 85%;
 }
 
 button {
@@ -110,18 +125,161 @@ button {
     border-radius: 30px;
     border: none;
     cursor: pointer;
+    font-weight: var(--bold);
+}
+
+.project:hover {
+    background-color: var(--dark-cyan);
+    color: var(--white);
 }
 
 .bookmark {
-    background-image: url(./images/icon-bookmark.svg);
+    background-image: url(./images/icon-bookmark.svg) !important;
     background-position: left;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 150px;
+    width: 180px;
 }
 
 .bookmark > p {
-    margin-left: 2.5rem;
+    margin-left: 2.2rem !important;
+}
+
+.active {
+    display: none;
+}
+
+.second,
+.third {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.figures {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 85%;
+    margin: 3rem;
+}
+
+.funds > h2,
+.backers > h2,
+.days > h2 {
+    font-size: var(--bigger-text);
+}
+
+.funds,
+.backers,
+.days {
+    text-align: left;
+    width: 31%;
+}
+
+.funds,
+.backers {
+    border-right: 1px solid var(--grey);
+}
+
+.backers,
+.days {
+    margin-left: 10%;
+}
+
+.range {
+    width: 85%;
+    height: 15px;
+    background-color: var(--grey);
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+}
+
+.range-length {
+    width: 80%;
+    height: inherit;
+    background-color: var(--cyan);
+    border-radius: 12px;   
+}
+
+/* About section */
+
+.about-section {
+    width: 85%;
+    margin-top: 3rem;
+}
+
+.about-section > h2,
+.about-section > p {
+    margin-bottom: 1.5rem;
+}
+
+.inner-sections {
+    width: 100%;
+    border: 1px solid var(--grey);
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 2rem;
+    font-weight: var(--bold);
+}
+
+.top > p {
+    color: var(--cyan);
+    font-size: 14px;
+}
+
+.mid {
+    margin: 1rem 1.5rem;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 2rem;
+}
+
+.bottom > button {
+    background-color: var(--cyan);
+    color: var(--white);
+    font-weight: var(--bold);
+}
+
+.bottom > button:hover {
+    background-color: var(--dark-cyan);
+}
+
+.out-of-stock {
+    opacity: .5;
+}
+
+.out-of-stock:hover,
+.out-of-stock > .bottom > button {
+    cursor: no-drop;
+}
+
+.out-of-stock > .bottom > button {
+    background-color: var(--grey);
+    color: var(--black);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }
 
 .attribution {
