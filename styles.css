@@ -5,6 +5,7 @@
     --dark-cyan: hsl(176, 72%, 28%);
     --black: hsl(0, 0%, 0%);
     --grey: hsl(0, 0%, 48%);
+    --light-grey: #f6f3f3;
     --white: hsl(0, 0%, 100%);
     --bold: 700;
     --medium: 500;
@@ -126,6 +127,11 @@ button {
     border: none;
     cursor: pointer;
     font-weight: var(--bold);
+    background-color: var(--light-grey);
+}
+
+button:hover {
+    transform: scale(102%);
 }
 
 .project:hover {
@@ -134,7 +140,7 @@ button {
 }
 
 .bookmark {
-    background-image: url(./images/icon-bookmark.svg) !important;
+    background-image: url(./images/icon-bookmark.svg);
     background-position: left;
     background-repeat: no-repeat;
     background-size: contain;
@@ -145,9 +151,6 @@ button {
     margin-left: 2.2rem !important;
 }
 
-.active {
-    display: none;
-}
 
 .second,
 .third {
@@ -186,13 +189,13 @@ button {
 
 .backers,
 .days {
-    margin-left: 10%;
+    margin-left: 5%;
 }
 
 .range {
     width: 85%;
     height: 15px;
-    background-color: var(--grey);
+    background-color: var(--light-grey);
     border-radius: 12px;
     margin-bottom: 2.5rem;
 }

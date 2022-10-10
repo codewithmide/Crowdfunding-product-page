@@ -1,11 +1,17 @@
 let bookmark = document.querySelector('.bookmark');
-const active = document.querySelector('.active');
-const inactive = document.querySelector('.inactive');
+let activeStatus = document.querySelector('.status');
+const btn = document.getElementById('btn');
 
-
-  document.getElementById("btn").onclick = function(){
-    this.style.color ="var(--white)";
-    this.style.backgroundColor = 'var(--dark-cyan)';
-    active.style.display = 'block';
-    inactive.style.display = 'none';
+btn.onclick = function () {
+  if (activeStatus.innerHTML == "Bookmark") {
+    activeStatus.style.color = "var(--dark-cyan)";
+    activeStatus.innerHTML = 'Bookmarked';
+    bookmark.style.backgroundImage = "url(./images/icon-check-bookmark.svg)";
+  } else if (activeStatus.innerHTML == "Bookmarked") {
+    activeStatus.innerHTML = "Bookmark";
+    activeStatus.style.color = "var(--black)";
+    bookmark.style.backgroundImage = "url(./images/icon-bookmark.svg)";
+  } else {
+    return '';
+  }
 };
