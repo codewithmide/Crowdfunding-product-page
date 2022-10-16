@@ -4,7 +4,7 @@
     --cyan: hsl(176, 50%, 47%);
     --dark-cyan: hsl(176, 72%, 28%);
     --black: hsl(0, 0%, 0%);
-    --grey: hsl(0, 0%, 48%);
+    --grey: hsl(0, 1%, 67%);
     --light-grey: #f6f3f3;
     --white: hsl(0, 0%, 100%);
     --bold: 700;
@@ -13,6 +13,7 @@
     --small-text: 1rem;
     --big-text: 1.6rem;
     --bigger-text: 2rem;
+    --paragraph: .8rem;
 }
 
 * {
@@ -23,23 +24,44 @@
 html,
 body {
     width: 100vw;
-    height: auto;
+    min-height: 100% !important;
     font-family: 'Commissioner', sans-serif;
     overflow-x: hidden;
-    background-color: rgb(232, 233, 227);
+    background-color: rgb(228, 228, 231);
     display: flex;
     flex-direction: column;
+    scroll-behavior: smooth;
     align-items: center;
 }
 
 main {
-    position: relative;
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+.step-two {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: hidden;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 60rem;
+    padding-top: 20rem;
+}
+
+.step-three {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 80rem;
+}
+
 
 header {
     width: 100%;
@@ -82,9 +104,12 @@ ul > li {
 .contents {
     width: 50%;
     margin-top: -5rem;
+    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
+    z-index: 1;
 }
 
 .box {
@@ -112,6 +137,11 @@ ul > li {
     margin: 3rem 3rem .5rem;
 }
 
+.first > p {
+    font-size: var(--small-text);
+    width: 80%;
+}
+
 .actions {
     margin: 2rem 0;
     width: inherit;
@@ -130,13 +160,13 @@ button {
     background-color: var(--light-grey);
 }
 
-button:hover {
-    transform: scale(102%);
+.project {
+    background-color: var(--cyan);
+    color: var(--white);
 }
 
 .project:hover {
     background-color: var(--dark-cyan);
-    color: var(--white);
 }
 
 .bookmark {
@@ -148,9 +178,241 @@ button:hover {
 }
 
 .bookmark > p {
-    margin-left: 2.2rem !important;
+    margin-left: 2.2rem;
 }
 
+/* modal section */
+.modal {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    width: 50%;
+    padding-bottom: 3rem;
+}
+
+.modal-quit {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 15px;
+    margin-top: 2rem;
+}
+
+.modal-quit > img {
+    cursor: pointer;
+}
+
+.modal-heading {
+    width: 90%;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.modal-heading > h2 {
+    margin-bottom: 1rem;
+    color: var(--black);
+    font-weight: 700;
+}
+
+.modal-box {
+    border: 1px solid var(--grey);
+    width: 90%;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    padding-bottom: 1rem;
+}
+
+.modal-box:focus {
+    border: 1px solid var(--cyan);
+}
+
+.top-modal-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 2rem .7rem;
+}
+
+.bottom-modal-row {
+    width: 85%;
+    margin-left: 4rem;
+    margin-bottom: 1rem;
+}
+
+.first-modal {
+    display: flex;
+}
+
+.first-modal > p {
+    font-weight: 700;
+    color: var(--cyan);
+}
+
+.slots-left {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+input {
+    margin-right: 1rem;
+    height: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+label {
+    cursor: pointer;
+    color: var(--black);
+    font-weight: 700;
+    margin-right: 1rem;
+}
+
+label:hover {
+    color: var(--cyan);
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: var(--white);
+  border: 1px solid var(--grey);
+  
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--cyan);
+    border: none;
+}
+
+label {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.modal-box:nth-child(6) {
+    opacity: .4;
+    cursor: no-drop;
+}
+
+.modal-box:nth-child(6) > .first-modal > input {
+    cursor: no-drop;
+}
+
+.modal-box:nth-child(6) > .first-modal > input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: var(--white);
+    border: 1px solid var(--grey);
+}
+  
+.modal-box:nth-child(6) > .first-modal >  input[type="checkbox"]:checked {
+    background-color: var(--white);
+    border: none;
+}
+
+.modal-box:nth-child(6) > .first-modal > label {
+    cursor: no-drop;
+}
+
+.pledge,
+.pledge-two {
+    border-top: 2px solid var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.no-reward {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.no-reward > button {
+    background-color: var(--cyan);
+    color: var(--white);
+}
+
+.no-reward > button:hover {
+    background-color: var(--dark-cyan);
+}
+
+.pledge-amount {
+    background-color: var(--white);
+    margin-right: 1rem;
+    border: 1px solid var(--cyan);
+}
+
+.pledge-amount:hover {
+    border: 1px solid var(--cyan);
+}
+
+.pledge-text {
+    margin-left: 1rem;
+}
+
+.continue-pledge {
+    background-color: var(--cyan);
+    color: var(--white);
+    margin-right: .9rem;
+}
+
+.continue-pledge:hover {
+    background-color: var(--dark-cyan);
+}
+
+/* modal ends */
+
+/* success */
+
+.success {
+    width: 32%;
+    height: 350px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 12px;
+    top: 15rem;
+}
+
+.success > p {
+    width: 80%;
+    text-align: center;
+}
+
+.success > a > button {
+    background-color: var(--cyan);
+    color: var(--white);
+}
+
+.success > a > button:hover {
+    background-color: var(--dark-cyan);
+}
+
+.success > a {
+    text-decoration: none;
+}
+
+/* success ends*/
 
 .second,
 .third {
@@ -167,6 +429,10 @@ button:hover {
     align-items: center;
     width: 85%;
     margin: 3rem;
+}
+
+.funds > p {
+    font-size: var(--paragraph);
 }
 
 .funds > h2,
@@ -240,7 +506,7 @@ button:hover {
 
 .top > p {
     color: var(--cyan);
-    font-size: 14px;
+    font-size: var(--paragraph);
 }
 
 .mid {
@@ -261,7 +527,7 @@ button:hover {
     font-weight: var(--bold);
 }
 
-.bottom > button:hover {
+.bottom > button:focus {
     background-color: var(--dark-cyan);
 }
 
@@ -283,6 +549,17 @@ button:hover {
     display: flex;
     align-items: center;
     gap: .5rem;
+}
+
+
+
+
+
+
+.hidden,
+.hidden-pledge,
+.success-hidden {
+    display: none;
 }
 
 .attribution {
