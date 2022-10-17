@@ -1,8 +1,26 @@
 let bookmark = document.querySelector('.bookmark');
 let activeStatus = document.querySelector('.status');
-const bambooBtn = document.getElementById('bamboo-btn');
-const blackBtn = document.getElementById('black-btn');
+let bambooBtn = document.getElementById('bamboo-btn');
+let blackBtn = document.getElementById('black-btn');
 let btn = document.getElementById('btn');
+let backProject = document.querySelector('.project');
+let modalSection = document.querySelector('.modal');
+let modalSectionQuit = document.querySelector('.quit-modal');
+let stepTwo = document.querySelector('.step-two');
+let stepThree = document.querySelector('.step-three');
+let content = document.querySelector('.contents');
+let modalBoxOne = document.querySelector('.one');
+let modalBoxTwo = document.querySelector('.two');
+let modalBoxThree = document.querySelector('.three');
+let checkBoxOne = document.getElementById('label-one');
+let checkBoxTwo = document.getElementById('label-two');
+let checkBoxThree = document.getElementById('label-three');
+let pledge = document.querySelector('.pledge');
+let pledgeTwo = document.querySelector('.pledge-two');
+let finalStage = document.querySelector('.final');
+let finalStageTwo = document.querySelector('.final-two');
+let finalStageThree = document.querySelector('.final-three');
+let successPage = document.querySelector('.success');
 
 btn.onclick = function () {
   if (activeStatus.innerHTML == "Bookmark") {
@@ -40,12 +58,6 @@ blackBtn.addEventListener('click', () => {
   }
 })
 
-let backProject = document.querySelector('.project');
-let modalSection = document.querySelector('.modal');
-let modalSectionQuit = document.querySelector('.quit-modal');
-let stepTwo = document.querySelector('.step-two');
-let stepThree = document.querySelector('.step-three');
-let content = document.querySelector('.contents');
 
 backProject.addEventListener('click', () => {
   modalSection.classList.remove('hidden');
@@ -61,19 +73,6 @@ modalSectionQuit.addEventListener('click', () => {
   modalSection.classList.add('hidden');
   stepTwo.style.display ='none';
 })
-
-let modalBoxOne = document.querySelector('.one');
-let modalBoxTwo = document.querySelector('.two');
-let modalBoxThree = document.querySelector('.three');
-let checkBoxOne = document.getElementById('label-one');
-let checkBoxTwo = document.getElementById('label-two');
-let checkBoxThree = document.getElementById('label-three');
-let pledge = document.querySelector('.pledge');
-let pledgeTwo = document.querySelector('.pledge-two');
-let finalStage = document.querySelector('.final');
-let finalStageTwo = document.querySelector('.final-two');
-let finalStageThree = document.querySelector('.final-three');
-let successPage = document.querySelector('.success');
 
 checkBoxOne.addEventListener('click', () => {
   if (modalBoxOne.style.borderColor == 'var(--grey)' || modalBoxOne.style.borderColor != 'var(--cyan)') {
@@ -144,3 +143,22 @@ finalStageThree.addEventListener('click', () => {
   content.style.zIndex = '0';
   stepThree.style.zIndex = '1';
 });
+
+
+// mobile view
+
+let navLinks = document.querySelector('.mobile-nav-links');
+let menu = document.querySelector('.menu');
+let close = document.querySelector('.close');
+
+menu.addEventListener('click', () => {
+  navLinks.style.display = 'flex';
+  menu.style.display = 'none';
+  close.style.display = 'flex';
+})
+
+close.addEventListener('click', () => {
+  navLinks.style.display = 'none';
+  menu.style.display = 'flex';
+  close.style.display = 'none';
+})
