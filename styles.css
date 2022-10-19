@@ -332,6 +332,7 @@ label {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 2rem;
     padding: 1rem 1rem 0 1rem;
 }
 
@@ -567,6 +568,14 @@ label {
 .mobile-action-menu,
 .mobile-nav-links,
 .mobile-hero {
+    display: none;
+}
+
+.text {
+    display: none;
+}
+
+.mobile-slot {
     display: none;
 }
 
